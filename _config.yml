@@ -17,19 +17,18 @@ future: true
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: El Kharoubi Iosif # the main title
+title: r00tn0b0dy # the main title
 
-tagline: Security Enthusiast/Researcher & Software Engineer # it will display as the subtitle
+tagline: Security Researcher # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Personal site of Iosif El Kharoubi — MSc student in Information Security & Cybernetic Systems, React/Node.js engineer, and offensive security practitioner.
-
+  Personal site of r00tn0b0dy.
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: ""
 
 github:
-  username: retroarab
+  username: r00tn0b0dy
 
 social:
   # Change to your full name.
@@ -38,7 +37,7 @@ social:
   email: elkharoubiiosif@gmail.com
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/retroarab
+    - https://github.com/r00tn0b0dy
     # Uncomment below to add more social links
     # - https://twitter.com/username
     - https://www.linkedin.com/in/iosif-el-kharoubi-607482233/
