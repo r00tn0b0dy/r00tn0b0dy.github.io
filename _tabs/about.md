@@ -38,10 +38,16 @@ I am a Master's student in Information Security and Cybernetic Systems (SISC) wi
 
 ## Achievements
 
-### Finalist – UPT CTF 2026
-Qualified among the top teams in a national cybersecurity competition focused on offensive security, reverse engineering, and web exploitation.
 
 ### Finalist – ROCSC (Romanian Cyber Security Challenge) 2026
 Advanced to the national finals after succeeding in qualification rounds covering cryptography, binary exploitation, and network security.
+
+### Finalist – UVT CTF 2026
+
+### Finalist – UNBreakable 2026
+Top 3 finish
+
+### Finalist – UPT CTF 2025
+Qualified among the top teams in a national cybersecurity competition focused on offensive security, reverse engineering, and web exploitation.
 
 ---
