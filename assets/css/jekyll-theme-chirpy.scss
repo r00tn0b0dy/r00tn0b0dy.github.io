@@ -233,10 +233,81 @@ kbd,
   font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
 }
 
-.highlight,
-.highlight pre {
+.content div[class^='language-'].highlighter-rouge,
+.content > pre {
   border: 1px solid var(--language-border-color);
   border-radius: 0.8rem;
+  overflow: hidden;
+  background: var(--highlight-bg-color);
+  box-shadow:
+    rgb(2 8 15 / 22%) 0 12px 28px -18px,
+    rgb(95 145 200 / 14%) 0 0 0 1px;
+}
+
+.content div[class^='language-'].highlighter-rouge {
+  margin: 1.25rem 0;
+}
+
+.content div[class^='language-'].highlighter-rouge .code-header {
+  border-bottom: 1px solid var(--language-border-color);
+  background: rgb(6 13 22 / 44%);
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight {
+  margin: 0;
+  overflow-x: auto;
+  border: 0;
+  border-radius: 0;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight code {
+  display: block;
+  min-width: max-content;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight table td {
+  padding: 0;
+  border: 0;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight pre,
+.content > pre {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  line-height: 1.55;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight .rouge-gutter {
+  width: 3.25rem;
+  border-right: 1px solid rgb(125 183 255 / 16%);
+  background: rgb(255 255 255 / 2.5%);
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight .rouge-gutter pre {
+  padding: 0.9rem 0.8rem;
+  color: var(--highlight-lineno-color);
+  text-align: right;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight .rouge-code {
+  width: 100%;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight .rouge-code pre {
+  padding: 0.9rem 1.15rem;
+}
+
+.content > pre {
+  padding: 0.9rem 1.15rem;
+  overflow-x: auto;
 }
 
 kbd {
