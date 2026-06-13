@@ -172,27 +172,6 @@ a:hover {
   box-shadow: var(--post-card-shadow-hover);
 }
 
-/* slim accent spine on each list item */
-#post-list .post-preview::after {
-  content: '';
-  position: absolute;
-  top: 0.85rem;
-  bottom: 0.85rem;
-  left: 0;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-  background: var(--tech-accent);
-  opacity: 0.7;
-  transition:
-    opacity 0.24s ease,
-    width 0.24s ease;
-}
-
-#post-list .post-preview:hover::after {
-  opacity: 1;
-  width: 4px;
-}
-
 /* Chirpy renders the home card as Bootstrap card-body > h1.card-title +
    div.card-text + div.post-meta. Kill the doubled card-body padding,
    shrink the real title class, and stop meta being pushed to the bottom.
