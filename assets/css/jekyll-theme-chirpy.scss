@@ -8,12 +8,71 @@
 {%- endif -%}
 ';
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
-:root {
-  --tech-accent: #2d8cff;
-  --tech-accent-soft: #68b5ff;
-  --tech-warm: #f39c45;
+/* ============================================================
+   Slate Monochrome
+   Calm, near-colorless palette on a flat single-color canvas.
+   The "accent" is just a stronger slate — dark in light mode,
+   near-white in dark mode — used sparingly. No glows, no grid.
+   ============================================================ */
+
+@mixin theme-light {
+  --main-bg: #f4f5f7;
+  --text-color: #2c333c;
+  --text-muted-color: #6b7480;
+  --heading-color: #11161c;
+  --link-color: #2f3842;
+  --link-underline-color: #c2c8cf;
+  --main-border-color: #e2e6eb;
+  --sidebar-bg: #ebedf0;
+  --sidebar-hover-bg: #e0e3e8;
+  --topbar-bg: rgb(244 245 247 / 85%);
+  --card-bg: #ffffff;
+  --card-hover-bg: #f6f7f9;
+  --btn-border-color: #d6dbe1;
+  --language-border-color: #e2e6eb;
+  --highlight-bg-color: #eef0f3;
+  --card-shadow: rgb(20 26 33 / 6%) 0 6px 18px -10px;
+  --post-card-shadow: rgb(20 26 33 / 5%) 0 4px 14px -10px;
+  --post-card-shadow-hover: rgb(20 26 33 / 11%) 0 10px 24px -12px;
+  --tech-accent: #3a4450;
+  --tech-accent-soft: #59636f;
+  --syn-str: #4f7a63;
+  --syn-key: #3f6191;
+  --syn-kw: #6a5599;
+  --syn-com: #98a2ad;
+  --syn-num: #836f44;
+  --syn-op: #6b7480;
+}
+
+@mixin theme-dark {
+  --main-bg: #14171c;
+  --text-color: #c1c8d0;
+  --text-muted-color: #828b95;
+  --heading-color: #e7ecf1;
+  --link-color: #d2d8df;
+  --link-underline-color: #3b434d;
+  --main-border-color: #252b33;
+  --sidebar-bg: #171b21;
+  --sidebar-hover-bg: #1e232b;
+  --topbar-bg: rgb(20 23 28 / 85%);
+  --card-bg: #181c22;
+  --card-hover-bg: #1d222a;
+  --btn-border-color: #2c333b;
+  --language-border-color: #252b33;
+  --highlight-bg-color: #0f1217;
+  --card-shadow: rgb(0 0 0 / 45%) 0 8px 22px -12px;
+  --post-card-shadow: rgb(0 0 0 / 34%) 0 6px 16px -12px;
+  --post-card-shadow-hover: rgb(0 0 0 / 52%) 0 10px 26px -12px;
+  --tech-accent: #c7cfd8;
+  --tech-accent-soft: #aab4bf;
+  --syn-str: #93b9a5;
+  --syn-key: #9bb4d0;
+  --syn-kw: #b3a6cf;
+  --syn-com: #5e6a75;
+  --syn-num: #cbb892;
+  --syn-op: #8a939e;
 }
 
 html {
@@ -21,130 +80,29 @@ html {
 }
 
 html[data-mode='light'] {
-  --main-bg: #f4f8fc;
-  --text-color: #1b2633;
-  --text-muted-color: #556576;
-  --heading-color: #131d2a;
-  --link-color: #1f6dc7;
-  --link-underline-color: #8fb6e0;
-  --main-border-color: #dbe6f2;
-  --sidebar-bg: #eaf1f8;
-  --sidebar-hover-bg: #dce8f5;
-  --topbar-bg: rgb(244 248 252 / 84%);
-  --card-bg: #fbfdff;
-  --card-hover-bg: #e8f1fc;
-  --card-shadow:
-    rgb(20 38 58 / 8%) 0 10px 24px 0, rgb(32 62 94 / 10%) 0 0 0 1px;
-  --post-card-shadow:
-    rgb(20 38 58 / 6%) 0 6px 16px 0, rgb(32 62 94 / 8%) 0 0 0 1px;
-  --post-card-shadow-hover:
-    rgb(22 67 114 / 12%) 0 10px 22px 0, rgb(70 125 183 / 22%) 0 0 0 1px;
-  --btn-border-color: #cedbeb;
-  --language-border-color: #cddced;
-  --highlight-bg-color: #edf4fb;
+  @include theme-light;
 }
 
 html[data-mode='dark'] {
-  --main-bg: #0f141b;
-  --text-color: #c7d3df;
-  --text-muted-color: #8796a6;
-  --heading-color: #e7eef6;
-  --link-color: #7db7ff;
-  --link-underline-color: #406893;
-  --main-border-color: #1f2d3c;
-  --sidebar-bg: #111a24;
-  --sidebar-hover-bg: #1c2734;
-  --topbar-bg: rgb(15 20 27 / 82%);
-  --card-bg: #121c27;
-  --card-hover-bg: #1b2836;
-  --card-shadow:
-    rgb(2 8 15 / 72%) 0 12px 28px 0, rgb(95 133 171 / 18%) 0 0 0 1px;
-  --post-card-shadow:
-    rgb(2 8 15 / 46%) 0 8px 20px 0, rgb(95 133 171 / 14%) 0 0 0 1px;
-  --post-card-shadow-hover:
-    rgb(7 20 34 / 58%) 0 12px 24px 0, rgb(95 145 200 / 26%) 0 0 0 1px;
-  --btn-border-color: #2a3b4d;
-  --language-border-color: #324458;
-  --highlight-bg-color: #0b1118;
+  @include theme-dark;
 }
 
 @media (prefers-color-scheme: dark) {
   html:not([data-mode]) {
-    --main-bg: #0f141b;
-    --text-color: #c7d3df;
-    --text-muted-color: #8796a6;
-    --heading-color: #e7eef6;
-    --link-color: #7db7ff;
-    --link-underline-color: #406893;
-    --main-border-color: #1f2d3c;
-    --sidebar-bg: #111a24;
-    --sidebar-hover-bg: #1c2734;
-    --topbar-bg: rgb(15 20 27 / 82%);
-    --card-bg: #121c27;
-    --card-hover-bg: #1b2836;
-    --card-shadow:
-      rgb(2 8 15 / 72%) 0 12px 28px 0, rgb(95 133 171 / 18%) 0 0 0 1px;
-    --post-card-shadow:
-      rgb(2 8 15 / 46%) 0 8px 20px 0, rgb(95 133 171 / 14%) 0 0 0 1px;
-    --post-card-shadow-hover:
-      rgb(7 20 34 / 58%) 0 12px 24px 0, rgb(95 145 200 / 26%) 0 0 0 1px;
-    --btn-border-color: #2a3b4d;
-    --language-border-color: #324458;
-    --highlight-bg-color: #0b1118;
+    @include theme-dark;
   }
 }
 
 @media (prefers-color-scheme: light) {
   html:not([data-mode]) {
-    --main-bg: #f4f8fc;
-    --text-color: #1b2633;
-    --text-muted-color: #556576;
-    --heading-color: #131d2a;
-    --link-color: #1f6dc7;
-    --link-underline-color: #8fb6e0;
-    --main-border-color: #dbe6f2;
-    --sidebar-bg: #eaf1f8;
-    --sidebar-hover-bg: #dce8f5;
-    --topbar-bg: rgb(244 248 252 / 84%);
-    --card-bg: #fbfdff;
-    --card-hover-bg: #e8f1fc;
-    --card-shadow:
-      rgb(20 38 58 / 8%) 0 10px 24px 0, rgb(32 62 94 / 10%) 0 0 0 1px;
-    --post-card-shadow:
-      rgb(20 38 58 / 6%) 0 6px 16px 0, rgb(32 62 94 / 8%) 0 0 0 1px;
-    --post-card-shadow-hover:
-      rgb(22 67 114 / 12%) 0 10px 22px 0, rgb(70 125 183 / 22%) 0 0 0 1px;
-    --btn-border-color: #cedbeb;
-    --language-border-color: #cddced;
-    --highlight-bg-color: #edf4fb;
+    @include theme-light;
   }
 }
 
+/* ---- Base ---- */
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-  letter-spacing: 0.01em;
-  position: relative;
-  background: var(--main-bg);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    radial-gradient(ellipse 75% 55% at 50% -12%, rgb(45 140 255 / 15%), transparent 62%),
-    radial-gradient(circle at 92% 3%, rgb(243 156 69 / 9%), transparent 34%),
-    radial-gradient(rgb(125 183 255 / 8%) 1px, transparent 1.4px);
-  background-size:
-    100% 100%,
-    100% 100%,
-    24px 24px;
-  background-position:
-    center top,
-    center top,
-    center center;
+  background: var(--main-bg); /* flat, single color — no overlay layer */
 }
 
 h1,
@@ -155,12 +113,13 @@ h5,
 h6,
 #sidebar .site-title,
 .post-preview .post-title {
-  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
-  letter-spacing: 0.015em;
+  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 a {
-  text-decoration-thickness: 0.08em;
+  text-decoration-thickness: 0.07em;
   text-underline-offset: 0.16em;
   transition:
     color 0.2s ease,
@@ -172,13 +131,17 @@ a:hover {
   text-decoration-color: var(--tech-accent-soft);
 }
 
+/* ---- Sidebar / topbar ---- */
 #sidebar {
   border-right: 1px solid var(--main-border-color);
-  box-shadow: inset -1px 0 0 rgb(255 255 255 / 3%);
 }
 
 #sidebar .nav-link {
   border-radius: 0.6rem;
+}
+
+#sidebar .site-title a {
+  letter-spacing: 0;
 }
 
 #topbar-wrapper {
@@ -186,15 +149,15 @@ a:hover {
   border-bottom: 1px solid var(--main-border-color);
 }
 
+/* ---- Post list cards ---- */
 .post-preview {
-  margin-left: 0;
-  margin-right: 0;
+  position: relative;
+  margin: 0 0 0.8rem;
   width: 100%;
   overflow: hidden;
   border: 1px solid var(--main-border-color);
-  border-radius: 0.95rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+  padding: 0.9rem 1.1rem 0.9rem 1.3rem;
   background: var(--card-bg);
   box-shadow: var(--post-card-shadow);
   transition:
@@ -209,11 +172,53 @@ a:hover {
   box-shadow: var(--post-card-shadow-hover);
 }
 
-#panel-wrapper .card,
-.categories.card,
-.list-group-item {
-  border: 1px solid var(--main-border-color);
-  box-shadow: var(--card-shadow);
+/* slim accent spine on each list item */
+#post-list .post-preview::after {
+  content: '';
+  position: absolute;
+  top: 0.85rem;
+  bottom: 0.85rem;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--tech-accent);
+  opacity: 0.7;
+  transition:
+    opacity 0.24s ease,
+    width 0.24s ease;
+}
+
+#post-list .post-preview:hover::after {
+  opacity: 1;
+  width: 4px;
+}
+
+/* Chirpy renders the home card as Bootstrap card-body > h1.card-title +
+   div.card-text + div.post-meta. Kill the doubled card-body padding,
+   shrink the real title class, and stop meta being pushed to the bottom.
+   !important is needed to beat Bootstrap's my-2 / mb-3 / flex-grow-1. */
+#post-list .post-preview .card-body {
+  padding: 0;
+}
+
+#post-list .post-preview .card-title {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin: 0 0 0.3rem !important;
+}
+
+/* excerpt removed from the list — auto-generated previews were noisy.
+   Cards are now just title + date/category.
+   Chirpy forces `#post-list .card .card-body .card-text { display: inherit
+   !important }` (specificity 1,3,0), so we out-specify it (1,4,0 via
+   .card-text.content) and use !important to win. */
+#post-list .card .card-body .card-text.content {
+  display: none !important;
+}
+
+#post-list .post-preview .post-meta {
+  flex-grow: 0 !important;
+  margin-top: 0.4rem;
 }
 
 #post-list .card-wrapper {
@@ -226,6 +231,104 @@ a:hover {
   display: none;
 }
 
+/* ---- Panel / category cards ---- */
+#panel-wrapper .card,
+.categories.card,
+.list-group-item {
+  border: 1px solid var(--main-border-color);
+  box-shadow: var(--card-shadow);
+}
+
+/* ---- Reading column ---- */
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.content h2 {
+  font-size: 1.55rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.content h3 {
+  font-size: 1.25rem;
+}
+
+.content p,
+.content li {
+  line-height: 1.78;
+}
+
+.content > p,
+.content > ul,
+.content > ol {
+  margin-bottom: 1.15rem;
+}
+
+.post .post-title {
+  font-size: 2rem;
+  line-height: 1.22;
+}
+
+/* ---- Blockquote: quiet accent rail ---- */
+.content blockquote {
+  border-left: 0.2rem solid var(--tech-accent-soft);
+  background: var(--highlight-bg-color);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.6rem 1rem;
+}
+
+/* ---- Tables ---- */
+.content table thead {
+  border-bottom: 2px solid var(--tech-accent-soft);
+}
+
+/* ---- Tag pills ---- */
+.post-tag,
+#panel-wrapper .post-tag,
+#post-list .post-meta .post-tag,
+.post-tags .post-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  margin: 0.28rem 0.42rem 0.28rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  border: 1px solid var(--main-border-color);
+  border-radius: 2rem;
+  background: var(--card-bg);
+  color: var(--text-muted-color);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.post-tag::before {
+  content: '#';
+  margin-right: 0.18rem;
+  font-weight: 600;
+  color: var(--tech-accent);
+  opacity: 0.8;
+}
+
+.post-tag:hover,
+#panel-wrapper .post-tag:hover,
+.post-tags .post-tag:hover {
+  border-color: var(--tech-accent);
+  color: var(--heading-color);
+  background: var(--card-hover-bg);
+  transform: translateY(-1px);
+}
+
+/* ---- Code fonts ---- */
 code,
 pre,
 kbd,
@@ -235,31 +338,88 @@ kbd,
   font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
 }
 
+kbd {
+  border-color: var(--btn-border-color);
+}
+
+/* ============================================================
+   Code blocks — flat editorial card
+   - bordered card, subtle title bar lighter than the code pane
+   - no fake macOS window dots
+   - left-aligned language tag (mono / uppercase / muted)
+   - no line-number gutter, no red Rouge error rows
+   ============================================================ */
+
 .content div[class^='language-'].highlighter-rouge,
 .content > pre {
   border: 1px solid var(--language-border-color);
-  border-radius: 0.8rem;
+  border-radius: 0.7rem;
   overflow: hidden;
   background: var(--highlight-bg-color);
-  box-shadow:
-    rgb(2 8 15 / 22%) 0 12px 28px -18px,
-    rgb(95 145 200 / 14%) 0 0 0 1px;
 }
 
 .content div[class^='language-'].highlighter-rouge {
+  position: relative;
   margin: 1.25rem 0;
 }
 
+/* ---- Bare code block: no header bar, no language label, no dot.
+   The copy button floats in the top-right corner and fades in on
+   hover (or keyboard focus) only. ---- */
 .content div[class^='language-'].highlighter-rouge .code-header {
-  border-bottom: 1px solid var(--language-border-color);
-  background: rgb(6 13 22 / 44%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0.35rem 0.4rem 0 0;
+  background: transparent;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
 }
 
+.content div[class^='language-'].highlighter-rouge:hover .code-header,
+.content div[class^='language-'].highlighter-rouge:focus-within .code-header {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* hide the language label, its icon and the old dot entirely */
+.content div[class^='language-'].highlighter-rouge .code-header span {
+  display: none;
+}
+
+/* copy button: small muted chip */
+.content div[class^='language-'].highlighter-rouge .code-header button {
+  margin: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  color: var(--text-muted-color);
+  background: var(--card-hover-bg);
+  border: 1px solid var(--language-border-color);
+  border-radius: 0.45rem;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.content div[class^='language-'].highlighter-rouge .code-header button:hover {
+  color: var(--heading-color);
+  border-color: var(--tech-accent-soft);
+}
+
+/* inner code surface (fenced blocks) */
 .content div[class^='language-'].highlighter-rouge .highlight {
   margin: 0;
-  overflow-x: auto;
   border: 0;
   border-radius: 0;
+  background: var(--highlight-bg-color);
+  overflow-x: auto;
 }
 
 .content div[class^='language-'].highlighter-rouge .highlight code {
@@ -278,44 +438,131 @@ kbd,
   border: 0;
 }
 
-.content div[class^='language-'].highlighter-rouge .highlight pre,
-.content > pre {
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  line-height: 1.55;
-}
-
+/* remove the line-number gutter entirely */
 .content div[class^='language-'].highlighter-rouge .highlight .rouge-gutter {
-  width: 3.25rem;
-  border-right: 1px solid rgb(125 183 255 / 16%);
-  background: rgb(255 255 255 / 2.5%);
-}
-
-.content div[class^='language-'].highlighter-rouge .highlight .rouge-gutter pre {
-  padding: 0.9rem 0.8rem;
-  color: var(--highlight-lineno-color);
-  text-align: right;
+  display: none;
 }
 
 .content div[class^='language-'].highlighter-rouge .highlight .rouge-code {
   width: 100%;
 }
 
+.content div[class^='language-'].highlighter-rouge .highlight pre,
 .content div[class^='language-'].highlighter-rouge .highlight .rouge-code pre {
-  padding: 0.9rem 1.15rem;
+  margin: 0;
+  padding: 0.9rem 1.1rem;
+  line-height: 1.62;
 }
 
+/* standalone <pre> is its own card */
 .content > pre {
-  padding: 0.9rem 1.15rem;
+  padding: 0.9rem 1.1rem;
+  line-height: 1.62;
   overflow-x: auto;
 }
 
-kbd {
-  border-color: var(--btn-border-color);
+/* comments: italic + slightly receded so structure pops */
+.content .highlight .c,
+.content .highlight .c1,
+.content .highlight .cm,
+.content .highlight .cd,
+.content .highlight .cp {
+  font-style: italic;
+  opacity: 0.82;
 }
 
+/* neutral text-selection inside code */
+.content div[class^='language-'].highlighter-rouge ::selection,
+.content > pre ::selection {
+  background: rgb(120 132 148 / 30%);
+}
+
+/* slim, neutral horizontal scrollbar for long lines */
+.content div[class^='language-'].highlighter-rouge .highlight,
+.content div[class^='language-'].highlighter-rouge .rouge-code pre,
+.content > pre {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(130 140 152 / 35%) transparent;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar,
+.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar,
+.content > pre::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar-thumb,
+.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar-thumb,
+.content > pre::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: rgb(130 140 152 / 32%);
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar-thumb:hover,
+.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar-thumb:hover,
+.content > pre::-webkit-scrollbar-thumb:hover {
+  background: rgb(130 140 152 / 50%);
+}
+
+.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar-track,
+.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar-track,
+.content > pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Bulletproof kill of Rouge's red "error token" rows.
+   Fires when a fence language (e.g. `http`) can't be parsed and paints
+   unparsed text on a red background — render it as plain code instead. */
+.content .highlight .err,
+.highlight .err,
+.rouge-code .err,
+pre .err {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* ---- Softened, desaturated syntax palette ----
+   Calmer than default Rouge so it sits inside the monochrome design,
+   but tokens stay distinguishable for reading code.
+   Prefixed with `html` so it ties Chirpy's `html[data-mode=...]` token
+   rules on specificity and wins on source order. */
+html .content .highlight {
+  .n,
+  .nn,
+  .nv,
+  .vi,
+  .vc,
+  .vg,
+  .py {
+    color: var(--text-color);
+  }
+
+  .s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss {
+    color: var(--syn-str);
+  }
+
+  .na, .nt, .nl, .nb, .bp, .nc, .nf, .fm {
+    color: var(--syn-key);
+  }
+
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .kv, .ow {
+    color: var(--syn-kw);
+  }
+
+  .c, .c1, .cm, .cd, .cp, .cs, .ch, .cpf {
+    color: var(--syn-com);
+  }
+
+  .m, .mb, .mf, .mh, .mi, .il, .mo, .mx {
+    color: var(--syn-num);
+  }
+
+  .o, .p, .pi {
+    color: var(--syn-op);
+  }
+}
+
+/* ---- Entry animations (subtle) ---- */
 #main-wrapper {
   animation: fade-in-up 0.5s ease both;
 }
@@ -378,338 +625,26 @@ kbd {
   }
 }
 
-@media (max-width: 849px) {
-  body::before {
-    background-size:
-      100% 100%,
-      100% 100%,
-      20px 20px;
-  }
-
+@media (prefers-reduced-motion: reduce) {
+  #main-wrapper,
+  #topbar-wrapper,
   .post-preview {
-    padding: 0.8rem;
-    border-radius: 0.8rem;
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 849px) {
+  .post-preview {
+    padding: 0.85rem 0.9rem 0.85rem 1.1rem;
+    border-radius: 0.75rem;
     transform: none;
   }
 
   .post-preview:hover {
     transform: none;
     box-shadow: var(--post-card-shadow);
-  }
-}
-
-/* ============================================================
-   Tech Editorial refinements
-   More whitespace, slim accent bar per post, bigger cleaner
-   headings, refined tag chips + code headers. Visual only.
-   ============================================================ */
-
-/* --- Post list: slim accent bar + larger titles --- */
-.post-preview {
-  position: relative;
-}
-
-#post-list .post-preview {
-  padding: 1.15rem 1.25rem 1.15rem 1.45rem;
-}
-
-#post-list .post-preview::after {
-  content: '';
-  position: absolute;
-  top: 1.1rem;
-  bottom: 1.1rem;
-  left: 0;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-  background: linear-gradient(180deg, var(--tech-accent), var(--tech-accent-soft));
-  opacity: 0.85;
-  transition: opacity 0.24s ease, width 0.24s ease;
-}
-
-#post-list .post-preview:hover::after {
-  opacity: 1;
-  width: 4px;
-}
-
-#post-list .post-preview .post-title {
-  font-size: 1.4rem;
-  line-height: 1.32;
-  margin-bottom: 0.35rem;
-}
-
-#post-list .post-preview .post-content {
-  color: var(--text-muted-color);
-}
-
-/* --- Reading column: bigger, breathier headings --- */
-.content h1,
-.content h2,
-.content h3,
-.content h4 {
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-  line-height: 1.3;
-}
-
-.content h2 {
-  font-size: 1.55rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--main-border-color);
-}
-
-.content h3 {
-  font-size: 1.25rem;
-}
-
-.content p,
-.content li {
-  line-height: 1.78;
-}
-
-.content > p,
-.content > ul,
-.content > ol {
-  margin-bottom: 1.15rem;
-}
-
-/* Post title on the article page */
-.post .post-title {
-  font-size: 2rem;
-  line-height: 1.22;
-  letter-spacing: 0.01em;
-}
-
-/* --- Tag pills (trending tags, post list, post footer) --- */
-.post-tag,
-#panel-wrapper .post-tag,
-#post-list .post-meta .post-tag,
-.post-tags .post-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.3rem 0.75rem;
-  margin: 0.28rem 0.42rem 0.28rem 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.74rem;
-  line-height: 1.3;
-  border: 1px solid var(--main-border-color);
-  border-radius: 2rem;
-  background: var(--card-bg);
-  color: var(--text-muted-color);
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.post-tag::before {
-  content: '#';
-  margin-right: 0.18rem;
-  font-weight: 600;
-  color: var(--tech-accent);
-  opacity: 0.85;
-}
-
-.post-tag:hover,
-#panel-wrapper .post-tag:hover,
-.post-tags .post-tag:hover {
-  border-color: var(--tech-accent);
-  color: var(--tech-accent-soft);
-  background: var(--card-hover-bg);
-  transform: translateY(-1px);
-  box-shadow: rgb(45 140 255 / 24%) 0 5px 14px -6px;
-}
-
-/* ============================================================
-   Code block redesign — flat editorial style
-   - no fake macOS window dots
-   - left-aligned language tag (mono / uppercase / accent)
-   - thin accent top edge, calm gutter, no red error rows
-   ============================================================ */
-
-/* Cohesive bordered card — no harsh accent line */
-.content div[class^='language-'].highlighter-rouge {
-  border: 1px solid var(--language-border-color);
-}
-
-/* Header bar: subtle tinted "title bar", contents left-aligned */
-.content div[class^='language-'].highlighter-rouge .code-header {
-  display: flex;
-  align-items: center;
-  height: auto;
-  padding: 0.45rem 0.75rem 0.45rem 1rem;
-  background: linear-gradient(
-    180deg,
-    rgb(125 183 255 / 7%),
-    rgb(125 183 255 / 2%)
-  );
-}
-
-/* Kill the three fake "traffic light" dots */
-.content div[class^='language-'].highlighter-rouge .code-header::before {
-  display: none !important;
-}
-
-/* Language label: left side, mono, uppercase, accent colored */
-.content div[class^='language-'].highlighter-rouge .code-header span {
-  margin-left: 0 !important;
-  margin-right: auto;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--tech-accent-soft);
-}
-
-.content div[class^='language-'].highlighter-rouge .code-header span::after {
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--tech-accent-soft);
-}
-
-/* Small accent dot before the label instead of window dots */
-.content div[class^='language-'].highlighter-rouge .code-header span::before {
-  content: '';
-  display: inline-block;
-  width: 0.45rem;
-  height: 0.45rem;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  background: var(--tech-accent);
-  vertical-align: middle;
-}
-
-/* Copy button pinned to the right, muted until hover */
-.content div[class^='language-'].highlighter-rouge .code-header button {
-  margin-left: auto;
-  color: var(--text-muted-color);
-  transition: color 0.2s ease;
-}
-
-.content div[class^='language-'].highlighter-rouge .code-header button:hover {
-  color: var(--tech-accent-soft);
-}
-
-/* Remove the line-number gutter entirely — just the code */
-.content div[class^='language-'].highlighter-rouge .highlight .rouge-gutter {
-  display: none;
-}
-
-/* Even padding now that there's no gutter */
-.content div[class^='language-'].highlighter-rouge .highlight .rouge-code pre,
-.content div[class^='language-'].highlighter-rouge .highlight pre {
-  padding: 0.9rem 1.1rem;
-}
-
-/* ---- Inside the code pane: editor-like depth + readability ---- */
-
-/* Recessed code surface so it reads as a real editor pane below the
-   tinted title bar (subtle darken + inset top shadow, theme-safe). */
-.content div[class^='language-'].highlighter-rouge .highlight,
-.content > pre {
-  background: rgb(0 0 0 / 9%);
-  box-shadow: inset 0 2px 7px -5px rgb(0 0 0 / 65%);
-}
-
-/* Roomier line-height for scanning code */
-.content div[class^='language-'].highlighter-rouge .highlight pre,
-.content > pre {
-  line-height: 1.62;
-}
-
-/* Comments: italic + slightly receded so structure pops */
-.content .highlight .c,
-.content .highlight .c1,
-.content .highlight .cm,
-.content .highlight .cd,
-.content .highlight .cp {
-  font-style: italic;
-  opacity: 0.82;
-}
-
-/* Accent text-selection inside code */
-.content div[class^='language-'].highlighter-rouge ::selection,
-.content > pre ::selection {
-  background: rgb(45 140 255 / 32%);
-}
-
-/* Slim, themed horizontal scrollbar for long lines */
-.content div[class^='language-'].highlighter-rouge .highlight,
-.content div[class^='language-'].highlighter-rouge .rouge-code pre,
-.content > pre {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(125 183 255 / 35%) transparent;
-}
-
-.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar,
-.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar,
-.content > pre::-webkit-scrollbar {
-  height: 0.5rem;
-}
-
-.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar-thumb,
-.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar-thumb,
-.content > pre::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: rgb(125 183 255 / 30%);
-}
-
-.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar-thumb:hover,
-.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar-thumb:hover,
-.content > pre::-webkit-scrollbar-thumb:hover {
-  background: rgb(125 183 255 / 50%);
-}
-
-.content div[class^='language-'].highlighter-rouge .highlight::-webkit-scrollbar-track,
-.content div[class^='language-'].highlighter-rouge .rouge-code pre::-webkit-scrollbar-track,
-.content > pre::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Bulletproof kill of Rouge's red "error token" rows.
-   Fires when a fence language (e.g. `http`) can't be parsed and paints
-   unparsed text on a red background — render it as plain code instead. */
-.content .highlight .err,
-.highlight .err,
-.rouge-code .err,
-pre .err {
-  background-color: transparent !important;
-  color: inherit !important;
-}
-
-/* --- Remove the solid TOC border-cover block ---
-   Chirpy paints a 3rem `--main-bg` gradient to mask content under the
-   sticky TOC. Over the dotted background it reads as a stray dark card,
-   so let the background flow through instead. */
-#toc-wrapper::before,
-.toc-border-cover {
-  background: transparent !important;
-}
-
-/* --- Blockquotes: accent rail --- */
-.content blockquote {
-  border-left: 0.25rem solid var(--tech-accent);
-  background: var(--highlight-bg-color);
-  border-radius: 0 0.5rem 0.5rem 0;
-  padding: 0.6rem 1rem;
-}
-
-/* --- Sidebar title a touch bolder --- */
-#sidebar .site-title a {
-  letter-spacing: 0.02em;
-}
-
-/* --- Tables: cleaner header row --- */
-.content table thead {
-  border-bottom: 2px solid var(--tech-accent);
-}
-
-@media (max-width: 849px) {
-  #post-list .post-preview {
-    padding: 0.85rem 0.9rem 0.85rem 1.1rem;
   }
 
   .content h2 {

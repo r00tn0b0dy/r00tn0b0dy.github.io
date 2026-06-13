@@ -4,7 +4,6 @@ date: 2026-05-13 12:00:00 +0300
 tags: [CTF, ROCSC2026, Web]
 categories: [CTF, Writeups]
 ctf: "ROCSC Finals 2026"
-author: "Shad, Mal, Mtib"
 ---
 
 These are polished notes / writeups for the three ROCSC Finals 2026 web challenges :
