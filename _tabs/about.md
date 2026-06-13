@@ -94,5 +94,3 @@ Politehnica University of Timișoara · **2021 – 2025**
 ## Contact
 
 * GitHub — [github.com/r00tn0b0dy](https://github.com/r00tn0b0dy)
-* LinkedIn — [Iosif El Kharoubi](https://www.linkedin.com/in/iosif-el-kharoubi-607482233/)
-* Email — [elkharoubiiosif@gmail.com](mailto:elkharoubiiosif@gmail.com)
