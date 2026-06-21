@@ -13,51 +13,6 @@ order: 1
 
 Security researcher and penetration tester specializing in web application security, adversary emulation, red teaming, and offensive security assessments.
 
-## Experience
-
-### Penetration Tester & Security Software Developer — Cynergy
-
-**Jan 2025 – May 2026**
-
-* Developed and secured full-stack web applications using React, Node.js, and
-  Oracle technologies, remediating high-severity vulnerabilities identified
-  through white-box security assessments.
-* Conducted monthly white-box penetration tests on newly developed web modules
-  and infrastructure components with full access to source code and system
-  architecture identifying and exploiting SQL injection, broken access
-  control, XSS, and insecure deserialization.
-* Produced comprehensive executive and technical security reports featuring
-  CVSS risk scoring, proof-of-concept exploitation evidence, impact analysis,
-  remediation recommendations, and vulnerability prioritization.
-
-### Summer Academy — Savnet
-
-**Jul 2023 – Oct 2023**
-
-* Configured and troubleshot VLANs, DHCP, NAT/PAT, and ACLs based on CCNA ITN
-  principles.
-* Completed Linux Essentials (Cisco Networking Academy).
-* Automated networking and configuration tasks using Python scripts.
-
-### Laboratory Mentorship Program — Bitdefender
-
-**2022**
-
-* Performed software analysis and vulnerability identification.
-* Worked with Windows internals and OS architecture (Windows, Linux, Android).
-* Developed low-level programs in C and automation scripts in Python, Bash, and
-  PowerShell.
-
-## Education
-
-### M.Sc. in Information Security and Cybernetic Systems
-
-Politehnica University of Timișoara · **2025 – 2027**
-
-### B.Sc. in Automation and Computer Engineering
-
-Politehnica University of Timișoara · **2021 – 2025**
-
 
 
 ## Certifications & Additional Training
