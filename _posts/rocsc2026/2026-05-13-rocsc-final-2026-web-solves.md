@@ -1,5 +1,5 @@
 ---
-title: "ROCSC Final 2026 Web Solves"
+title: "ROCSC Final 2026 — Web Solves"
 date: 2026-05-13 12:00:00 +0300
 tags: [CTF, ROCSC2026, Web]
 categories: [CTF, Writeups]
